@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM이란 무엇인가?</title>
+</head>
+
+<body>
+    <div>
+        <ul id="list">
+            <li>Java</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+        </ul>
+    </div>
+
+    <div id="list2"></div>
+
+    <img>
+
+    <script>
+        const newLi = document.createElement("li");
+        const text = document.createTextNode("CSS");
+        newLi.append(text);
+        document.querySelector("#list").append(newLi);
+        // document.querySelector("#list").prepend(newLi);
+
+        (() => {
+            const array = [
+                { name: "김기정", age: 10 },
+                { name: "박기정", age: 10 },
+                { name: "최기정", age: 10 },
+            ];
+
+            const list2 = document.querySelector("#list2");
+
+            array.map((student)=>{
+                return `<li>${student.name}(${student.age})</li>`;
+            })
+            .forEach((li)=>{
+                list2.innerHTML += li;
+            });
+        })();
+
+        document.querySelector("img").setAttribute("src", "https://picsum.photos/200/200");
+        document.querySelector("img").removeAttribute("src");
+
+
+    </script>
+</body>
+
+</html>

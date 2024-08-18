@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="menu">
+        <button class="menu-item">버튼1</button>
+        <button class="menu-item">버튼2</button>
+        <button class="menu-item">버튼3</button>
+    </div>
+    <script>
+        const menu = document.querySelector("#menu");
+        
+        // 동적 버튼 생성 및 추가
+        const newButton = document.createElement("button");
+        newButton.textContent = "버튼4";
+        menu.append(newButton);
+
+        // const buttons = document.querySelectorAll(".menu-item");
+        // for (const button of buttons) {
+        //     button.addEventListener("click", (event)=> {
+        //         console.log(event.target.textContent + "버튼 클릭!");
+        //     });
+        // }
+
+        // menu.addEventListener("click", (event) => {
+        document.addEventListener("click", (event) => {
+            console.log(event.target.textContent + "버튼 클릭!");
+        });
+
+
+    </script>
+</body>
+
+</html>

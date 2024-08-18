@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>일정 관리</title>
+    <style>
+        body *{
+            padding: 7px 10px;
+            margin: 5px 8px;
+            color: #ffffff;
+            font-size: 12px;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        #container {
+            width: 30rem;
+            margin: 5rem auto;
+        }
+        .insert-todo {
+            display: flex;
+        }
+        .insert-todo input[type="text"]{
+            flex: 1;
+        }
+        #today_list li {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        ul, li{
+            list-style: none;
+        }
+        .complete {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container" >
+        <div class="insert-todo">
+            <input type="text" placeholder="할일을 입력하세요.">
+            <button type="button">등록</button>
+        </div>
+        <h1 id="title">오늘 할 일</h1>
+
+        <ul id="today-list">
+            <li class="item"><span>자바스크립트 공부1 <input type="checkbox"></span><button type="button">삭제</button></li>
+            <li class="item"><span>자바스크립트 공부2 <input type="checkbox"></span><button type="button">삭제</button></li>
+            <li class="item"><span>자바스크립트 공부3 <input type="checkbox"></span><button type="button">삭제</button></li>
+        </ul>
+    </div>
+    <script src="./js/todo-list.js"></script>
+</body>
+
+</html>
