@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *  {
+            font-size: 20pt;
+        }
+    </style>
+</head>
+<body>
+    <p>현재 카운트 : <span id="result">0</span></p>
+    <button id="plusBtn"  type="button">+</button>
+    <button id="minusBtn" type="button">-</button>
+    <script>
+        const closure = (function(){
+            let count = 0;
+            return function(fn){
+                // return ++count;
+                count = fn(count);
+                return count;
+            }
+        })();
+
+        // 카운트값 화면 출력
+        const displayCount = function(count){
+            document.querySelector("#result").textContent = count;
+        }
+
+        // event target
+        const plusBtn = document.querySelector("#plusBtn");
+        const minusBtn = document.querySelector("#minusBtn");
+
+        plusBtn.addEventListener("click", (event) => {
+            // count = ++count;
+            // const closure = plusCount();
+            let count = closure((count)=> {
+                return ++count;
+            });
+            // console.log(count);
+            displayCount(count);
+        });
+
+        minusBtn.addEventListener("click", (event) => {
+            displayCount(closure(count => --count));
+        });
+    </script>
+</body>
+</html>

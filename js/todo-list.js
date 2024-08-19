@@ -36,8 +36,8 @@ addBtn.addEventListener("click", addTodo);
 todayList.addEventListener("change", updateTodo);
 todayList.addEventListener("click", removeTodo);
 
-input.addEventListener("keydown", (event) => {
-    if (event.keyCode === 13) {
+input.addEventListener("change", (event) => {
+    // if (event.keyCode === 13) {
         addTodo(event);
-    }
+    // }
 });
